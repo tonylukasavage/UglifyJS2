@@ -23,7 +23,7 @@ for (var i = 0; i < tests.length; i++) {
 	try {
 		var ast = ugly.parse(tests[i]);
 		console.log(green('OK'));
-		printAst && console.log(ast);
+		printAst && console.log(require('util').inspect(ast, { showHidden: false, depth: 5 }));
 	} catch (e) {
 		console.log(red('FAIL'));
 		console.log(red('%s:%s:%s %s'), e.line, e.col, e.pos, e.message);
